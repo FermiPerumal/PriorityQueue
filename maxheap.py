@@ -1,31 +1,13 @@
 """
 This class contains an implementation of a simple priority queue
+using a max heap
 """
 
 import logging
 import sys
 logging.basicConfig(stream=sys.stdout, level=logging.DEBUG)
 
-class Command():
-    """
-    Command class that contains the command to be
-    executed and its priority
-    """
-    def __init__(self, command, priority):
-        self.__command = command
-        self.__priority = priority
-
-    def command(self):
-        return self.__command
-
-    def priority(self):
-        return self.__priority
-
-    def setCommand(self, command):
-        self.__command = command
-
-    def setPriority(self, priority):
-        self.__priority = priority
+from command import Command
 
 class PriorityQueue():
     MIN_PRIORITY = 0
@@ -40,7 +22,7 @@ class PriorityQueue():
         command: 'ls'
     }
     The higher the number, the higher the priority
-    ie: 10 - highest priority; 1 - lowest priority
+    ie: 10 - highest priority; 0 - lowest priority
     """
     def __init__(self):
         # The first node is left empty to make tree traversal easier
